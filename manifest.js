@@ -2,8 +2,8 @@
 // Yeni sürüm yayınlarken bu dosyadaki version alanını güncelle. Bu dosya
 // standalone HTML'e GÖMÜLMEZ; her zaman canlı sunucudan çekilir.
 window.__APP_MANIFEST__ = {
-  version: '0.9.45',
-  released: '2026-09-19',
-  notes: 'Modül 2 ve Modül 4\'ün "Genel" sekmesindeki üstteki özet kartları (Toplam Vaka / Hastane Teslim % / Vaka Kapatma %) kaldırıldı. ICD-10 sekmesine Akıllı Bileklik ile birebir aynı yapıda iki alt sekme eklendi: "İstasyon Bazlı" (doluluk tablosu) ve "Girilmeyen Vakalar" (İstasyon, Vaka Tarihi, KKM Protokol, Ekip Şefi, Sonuç, İstasyon Açıklaması detay listesi), Excel çıktısına da ayrı bir sayfa olarak yansıdı.',
+  version: '1.0.01',
+  released: '2026-09-20',
+  notes: 'v1.0 — Kapsamlı filtreleme ve arayüz güncellemesi: Modül 5 (İstasyon Performans, İstasyon Değerlendirme, Mahalle Dağılımı, Ekip Dağılımı), GKG 15/16/17/20 + Hastane Teslim (İstasyon Bazlı + Eşik Aşımı), ICD-10 (İstasyon Bazlı + Girilmeyen Vakalar), Akıllı Bileklik (İstasyon Bazlı + Takılmayan Hastalar) ve Vaka Kapatma (İstasyon Bazlı, 24/72/Diğer, Kapatılmayan Vaka) sekmelerinin tümüne arama/filtreleme eklendi — hepsi ilgili sekme butonlarıyla aynı satırda, sağa yaslı. Modül 2/4 "Genel" sekmesindeki gereksiz özet kartları kaldırıldı. Vaka Kapatma "Diğer" kategorisi artık sadece 72 saatten uzun sürede KAPANMIŞ vakaları içeriyor (kapatılmamış vakalar ayrı takip ediliyor). Ana panele ICD-10 ve Akıllı Bileklik kartları eklendi, kart taşma/hizalama sorunları düzeltildi.',
   downloadUrl: 'https://raw.githubusercontent.com/gumusorhan-wq/istatistik-merkezi-112-dagitim/main/112-istatistik-merkezi.html'
 };
