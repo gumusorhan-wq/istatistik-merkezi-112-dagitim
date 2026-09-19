@@ -4,6 +4,6 @@
 window.__APP_MANIFEST__ = {
   version: '0.9.44',
   released: '2026-09-19',
-  notes: 'Birikmiş güncelleme paketi: (1) "Merkezi ayar güncellemesi" bildiriminin gereksiz yere tekrar tekrar çıkması düzeltildi — gömülü varsayılan Matris ile "uygulandı" sayacı artık senkronize. (2) Gizli/özel tarayıcı modunu tahmin edip uyaran bildirim eklendi. (3) Modül 4\'e "Akıllı Bileklik" sekmesi eklendi — kendi ayrı Matris kategorisi var, istasyon bazlı doluluk + "Takılmayan Hastalar" detay listesi (İstasyon, Vaka Tarihi, KKM Protokol, Ekip Şefi, İstasyon Açıklaması), Excel çıktısına da yansıyor. (4) Matris v6\'ya güncellendi (2280 kombinasyon, Akıllı Bileklik dahil).',
+  notes: 'Akıllı Bileklik: "Takılmayan Hastalar" listesine Ekip Şefi\'nden sonra Sonuç kolonu eklendi (ekran + Excel). Excel çıktısı genel olarak standartlaştırıldı: GKG 15/16/17/20, Hastane Teslim, ICD-10, Vaka Kapatma ve Akıllı Bileklik\'in tümü artık aynı şablonu kullanıyor — Başlık + Özet + "İstasyon Bazlı Dağılım" tablosu + altında TOPLAM satırı. ICD-10 ve Vaka Kapatma\'ya daha önce hiç olmayan istasyon bazlı Excel sayfaları da bu vesileyle eklendi.',
   downloadUrl: 'https://raw.githubusercontent.com/gumusorhan-wq/istatistik-merkezi-112-dagitim/main/112-istatistik-merkezi.html'
 };
