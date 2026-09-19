@@ -4,6 +4,6 @@
 window.__APP_MANIFEST__ = {
   version: '0.9.45',
   released: '2026-09-19',
-  notes: 'Ana panel: ICD-10 Doluluk ve Akıllı Bileklik kartları eklendi (10 kart, 2 satır × 5 sütun). Kart sıralaması sabitlendi: Toplam Vaka, KKM Reaksiyon, İstasyon Reaksiyon, Kentsel, Kırsal, ICD-10, Akıllı Bileklik, Vaka Kapatma, Hastane Teslim, Ort. Hastane Teslim. Dar kartlarda sayıların alt satıra kayması düzeltildi (tek satır). "Akıllı Bileklik - İstasyon" Excel sayfasına TOPLAM satırı eklendi. Üst araç çubuğu: ASHİ/Dış Kurum/Tüm Ekipler artık solda, dosya işlemleri butonları (Yeni Dosya/Arşive Kaydet/İndir/Yerel Kayıt) sağa yaslı, hepsi tek satırda.',
+  notes: 'Modül 2 ve Modül 4\'ün "Genel" sekmesindeki üstteki özet kartları (Toplam Vaka / Hastane Teslim % / Vaka Kapatma %) kaldırıldı. ICD-10 sekmesine Akıllı Bileklik ile birebir aynı yapıda iki alt sekme eklendi: "İstasyon Bazlı" (doluluk tablosu) ve "Girilmeyen Vakalar" (İstasyon, Vaka Tarihi, KKM Protokol, Ekip Şefi, Sonuç, İstasyon Açıklaması detay listesi), Excel çıktısına da ayrı bir sayfa olarak yansıdı.',
   downloadUrl: 'https://raw.githubusercontent.com/gumusorhan-wq/istatistik-merkezi-112-dagitim/main/112-istatistik-merkezi.html'
 };
