@@ -4,9 +4,9 @@
 window.__SETTINGS_MANIFEST__ = {
   "magic": "huser-112-settings-sync",
   "schema": 1,
-  "settingsVersion": 5,
-  "exportedAt": "2026-09-16T12:45:27.727Z",
-  "notes": "Merkez tarafından 16.09.2026 tarihinde güncellendi.",
+  "settingsVersion": 6,
+  "exportedAt": "2026-09-19T01:41:03.946Z",
+  "notes": "Merkez tarafından 19.09.2026 tarihinde güncellendi.",
   "matrix": {
     "1": {
       "genelToplam": {},
@@ -2059,6 +2059,114 @@ window.__SETTINGS_MANIFEST__ = {
           "olay yerinde bekleme": true,
           "yaralı yok": true,
           "diğer": true
+        }
+      },
+      "akilliBileklik": {
+        "iş kazası": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
+        },
+        "protokol": {
+          "-": true,
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "diğer": true,
+          "ex - yerinde bırakıldı": true,
+          "görev iptali": true,
+          "nakil - diğer": true,
+          "nakil - eve": true,
+          "nakil - hastaneler arası": true,
+          "nakil - hastaneye": true,
+          "nakil - red": true,
+          "nakil - tıbbi tetkik için": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true,
+          "yerinde müdahale": true
+        },
+        "sağlık tedbirleri": {
+          "-": true,
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "diğer": true,
+          "ex - yerinde bırakıldı": true,
+          "görev iptali": true,
+          "nakil - diğer": true,
+          "nakil - eve": true,
+          "nakil - hastaneler arası": true,
+          "nakil - hastaneye": true,
+          "nakil - red": true,
+          "nakil - tıbbi tetkik için": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true,
+          "yerinde müdahale": true
+        },
+        "diğer": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
+        },
+        "diğer kazalar": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
+        },
+        "intihar": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
+        },
+        "medikal": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
+        },
+        "nakil": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
+        },
+        "trafik kazası": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
+        },
+        "yangın": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
+        },
+        "yaralama": {
+          "asılsız ihbar": true,
+          "başka araçla nakil": true,
+          "görev iptali": true,
+          "diğer": true,
+          "olay yerinde bekleme": true,
+          "yaralı yok": true
         }
       }
     },
