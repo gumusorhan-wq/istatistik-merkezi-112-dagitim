@@ -2,8 +2,8 @@
 // Yeni sürüm yayınlarken bu dosyadaki version alanını güncelle. Bu dosya
 // standalone HTML'e GÖMÜLMEZ; her zaman canlı sunucudan çekilir.
 window.__APP_MANIFEST__ = {
-  version: '1.0.07',
-  released: '2026-09-28',
-  notes: 'Özel Değerlendirme: Excel sütunlarından dinamik metrik seçimi geliştirildi — kimlik/kod/tarih alanları hariç tutuldu ("Ulaşım sn" süre sütunları hatalı hariç tutuluyordu, düzeltildi). Yeni FİLTRE: herhangi bir sütun+değer seçilip (ör. Kentsel/Kırsal = Kırsal) tüm metrikler sadece o vakalar üzerinden hesaplanır; filtre değerleri sol taraftaki seçili istasyonlara göre gelir. Başlık/filtre/indirme butonları tek satırda, Excel/Ay Ay/Toplu butonlarında anında açılan açıklama balonu. TOPLAM/ORTALAMA satırı hizası düzeltildi (tüm tablolarda). Hastane Teslim listesinde Nakledilen/Sevk Eden Hastane, harita lokasyon katmanları ve v1.0.06 içeriği dahil.',
+  version: '1.0.08',
+  released: '2026-09-29',
+  notes: 'Özel Değerlendirme: her metrik artık KENDİ Matris hariç tutma kategorisiyle ayrı ayrı hesaplanıyor (ör. Nakil vakaları İstasyon Reaksiyon için hariç, Hastane Teslim için dahil olabiliyor). Yeni \'Meşguliyet\' kategorisi eklendi. \'Hariç Tutma\' sekmesi artık seçili metriklerin kategorilerini ayrı ayrı gösterir, boşsa diğer kategorilerden (Modül 4 dahil) otomatik doldurur. Seçili metrik listesinde kategori rozeti (uyarı ikonlu). Sütun arama artık aranabilir açılır kutu. Kapsamlı isimlendirme düzeltmesi: \'GKG\' öneki tüm uygulamadan (sekmeler, kartlar, Ayarlar, Kılavuz, Excel, indirilen dosya adları dahil) kaldırıldı — KKM Reaksiyon, İstasyon Reaksiyon, Kentsel Ulaşım, Kırsal Ulaşım. Modül 4\'ün kendi adı \'İstasyon İstatistik\', içindeki Hastane Teslim metriği ise kendi adını korudu.',
   downloadUrl: 'https://raw.githubusercontent.com/gumusorhan-wq/istatistik-merkezi-112-dagitim/main/112-istatistik-merkezi.html'
 };
