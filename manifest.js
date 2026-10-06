@@ -2,8 +2,8 @@
 // Yeni sürüm yayınlarken bu dosyadaki version alanını güncelle. Bu dosya
 // standalone HTML'e GÖMÜLMEZ; her zaman canlı sunucudan çekilir.
 window.__APP_MANIFEST__ = {
-  version: '1.0.15',
+  version: '1.0.16',
   released: '2026-10-06',
-  notes: 'DÜZELTME: Özel Değerlendirme\'de arşiv aylarında sütunlar artık her ay için başlık adına göre bulunuyor (değer/eşik filtresi, metrikler, ortak vaka). Sütun yeri aydan aya değiştiğinde filtrelenen sayıların eksik çıkması (ör. Sevk Edilen İl - il dışı) giderildi. Değer filtresi listesi artık seçili tüm aylardaki değerleri gösteriyor. Başlıklarda büyük/küçük harf ve boşluk farkları önemsenmiyor; başlık bilgisi olmayan eski arşiv aylarında sütun haritası kullanılıyor.',
+  notes: 'YENİ: Haritada istasyon, dış kurum ambulansı ve hastane ikonlarının üzerine gelince bilgi paneli (toplam vaka, en çok vaka gelen 3 mahalle; hastanelerde nakil/sevk ayrımı ve en çok getiren istasyonlar). Vaka halkaları koyu renkli, rakamlar beyaz ve okunaklı. Uydu görünümünde yol ve yer adları. DEĞİŞİKLİK: Sevk sayıları (il içi/il dışı ve Özel Değerlendirme sevk sütunları) her satır ayrı hasta olarak sayılıyor; vaka sayıları eskisi gibi. Arşivdeki aylar açılışta kendiliğinden yeniden hesaplanır.',
   downloadUrl: 'https://raw.githubusercontent.com/gumusorhan-wq/istatistik-merkezi-112-dagitim/main/112-istatistik-merkezi.html'
 };
