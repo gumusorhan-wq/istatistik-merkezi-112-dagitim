@@ -1,10 +1,10 @@
 // Public manifest — mevcut sürüm bilgisi.
-// Güncelleme bildirimi KAPALI: version bilerek 1.0.0'da tutuluyor; böylece hiçbir
-// offline kopya (v1.0.14+) güncelleme uyarısı göstermez. Bu dosya
+// Güncelleme bildirimi yalnızca bu sürüm (1.0.26) için açıldı; sonraki yayınlarda
+// version değiştirilmezse offline kopyalara yeni bildirim gitmez. Bu dosya
 // standalone HTML'e GÖMÜLMEZ; her zaman canlı sunucudan çekilir.
 window.__APP_MANIFEST__ = {
-  version: '1.0.0',
-  released: '2026-10-11',
-  notes: 'Modül 2’nin adı GÖREN İstatistik oldu: KKM ve İstasyon Reaksiyon, Kentsel 0–10 ve Kırsal 0–30 dk ulaşım resmî GÖREN raporlarıyla aynı kurallarla (ASHİ, hasta bazlı) hesaplanıyor. Modül 4 eski hesaplamasına döndü; Kontrol Paneli üst kartları Modül 4’ten geliyor. Kılavuza 15. bölüm (GÖREN hesaplama kuralları) eklendi. Arşivdeki aylar ilk açılışta yeniden hesaplanır.',
+  version: '1.0.26',
+  released: '2026-10-19',
+  notes: 'v1.0.26: Modül 1’e Hasta Bazlı sekmesi; Modül 5 Mahalle & Ekip Dağılımı’nda çoklu ay seçimi ve Excel İndir; Özet’te Yıllık / Ay Seç dönem penceresi ve KKM açıklamasında seçili dönem planlı nakil toplamları. Arşivdeki aylar ilk açılışta yeniden hesaplanır.',
   downloadUrl: 'https://raw.githubusercontent.com/gumusorhan-wq/istatistik-merkezi-112-dagitim/main/112-istatistik-merkezi.html'
 };
