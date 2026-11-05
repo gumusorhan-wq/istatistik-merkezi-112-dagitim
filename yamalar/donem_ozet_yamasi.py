@@ -1,6 +1,6 @@
 """Sürüm 12.43 (Aşama 2, 2. adım): 4 ve daha çok aylık dönem (istasyon süzgeçsiz, kurum arşivi) aylık özetlerden birleştirilir
 (donem_ozet.js). İstasyon süzgeçli dönemde her ay inerken seçilen istasyonlara süzülür (bellekte tüm ayların satırları tutulmaz).
-Özet dönemde istasyon seçici listesi sonuçtan gelir. ozet_yamasi.py'den SONRA uygulanır."""
+Özet dönemde istasyon seçici listesi sonuçtan gelir. Modül 2 "önceki ay" cihazda yoksa sunucudaki ay özetinden alınır. ozet_yamasi.py'den SONRA uygulanır."""
 import base64, re, sys, os
 p = sys.argv[1]; html = open(p, encoding="utf-8").read()
 m = re.search(r'var b="([A-Za-z0-9+/=]+)";var bin=atob\(b\)', html)
@@ -23,5 +23,8 @@ bir('recs.push(await __dnAyAl(L[i],yerel,il,ilerleme))}',
 bir('__DN_ONB.set(k,P);const __enCok=', '__onSuz&&(P.kaynak=null,P.D&&(P.D.kaynak=null,P.D.istListe=null));__DN_ONB.set(k,P);const __enCok=')
 bir('const istler=R.useMemo(()=>{const rows=D?D.kaynak:pr,c=(D?D.cols:cols)||{},k=c.istasyon;if(!rows||!k)return[];',
     'const istler=R.useMemo(()=>{if(D&&!D.kaynak&&D.istListe)return D.istListe;const rows=D?D.kaynak:pr,c=(D?D.cols:cols)||{},k=c.istasyon;if(!rows||!k)return[];')
+bir('const p=(async()=>{try{const L=(await(0,ze.yZ)()).map(e=>e.ym).filter(y=>y<K).sort(),pr=L[L.length-1];if(!pr)return null;',
+    'const p=(async()=>{try{const L=(await(0,ze.yZ)()).map(e=>e.ym).filter(y=>y<K).sort(),pr=L[L.length-1];'
+    'try{const uz=await __ozOncUzak(K);if(uz&&(!pr||uz.ym>pr)){const T=await __ozOncOzet(uz.il,uz.ym,Y);if(T)return{ym:uz.ym,T}}}catch(e){}if(!pr)return null;')
 html = html[:m.start(1)] + base64.b64encode(js.encode("utf-8")).decode() + html[m.end(1):]
 open(p, "w", encoding="utf-8").write(html); print("DONEM_OZET_OK")

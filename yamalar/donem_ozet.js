@@ -24,3 +24,10 @@ async function __ozDonem(L,ilerleme){
   ilerleme(`${L.length} ayın özeti birleştiriliyor…`);await new Promise(x=>setTimeout(x,20));
   const M=__ozBosListe(__ozetBirlestir(parca));M.__ozetDonem={aylar:L.slice(),hesaplanan,yazilan};return{results:M,cols,allHeaders:ah}}
 window.__ozDonem=__ozDonem;
+/* Modül 2 "önceki ay": önceki ay bu cihazda yoksa (ya da cihazdaki daha eskiyse) sunucudaki ay özetinden alınır (Sürüm 12.43) */
+const __OZ_ONC=new Map;
+async function __ozOncUzak(K){const KK=window.__IM112_KURUM;if(!KK||!KK.aktif())return null;const k=await KK.oturum();if(!k||k.istasyon)return null;
+  const il=await KK.hedefIl(),L=((await KK.liste(il))||[]).map(f=>f.ym).filter(y=>y<K).sort();return L.length?{il,ym:L[L.length-1]}:null}
+async function __ozOncOzet(il,ym,Y){const key=il+"|"+ym;let p=__OZ_ONC.get(key);
+  if(!p){p=(async()=>{const u8=new Uint8Array(await window.__IM112_HOST.arsiv.indir(il,ym,{ozet:!0})),q=await __ORT.paketAc(u8);return q&&q.ym===ym&&q.results?{fp:q.fp,results:q.results}:null})().catch(e=>{console.warn("[özet] önceki ay alınamadı",ym,e);return null});__OZ_ONC.set(key,p)}
+  const o=await p;if(!o||o.fp!==(0,ze.a8)(Ge.getState().matrix))return null;const T=o.results[Y]||o.results;return T&&T.master&&T.m2?T:null}
