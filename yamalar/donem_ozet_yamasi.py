@@ -16,7 +16,7 @@ bir('if(__DN_ONB.has(k))return __DN_ONB.get(k);',
     'if(L.length>=__OZ_ESIK&&!ist.length&&K&&K.aktif()&&!window.__OZ_KAPALI){const Z=await __ozDonem(L,ilerleme),de=__dnEtiket(L),__bos=[],'
     '__il=(((Z.results.istasyonDegerlendirme||{}).toplam||{}).rows||[]).map(x=>[x.istasyon,x.toplamVaka]).sort((a,b)=>a[0].localeCompare(b[0],"tr",{numeric:!0})),'
     'D={aylar:L,ist,rows:__bos,kaynak:null,istListe:__il,cols:Z.cols,allHeaders:Z.allHeaders,donemEtiket:de,istEtiket:"",etiket:de,ozet:!0},'
-    'P={D,results:Z.results,cm:L[L.length-1],file:{name:"Seçili dönem: "+de+" (aylık özetlerden)",size:0},cols:Z.cols,rows:__bos,kaynak:null,allHeaders:Z.allHeaders,aylar:L,ist,ham:Z.results,dosyaHam:null,ozet:!0};'
+    'P={D,results:Z.results,cm:L[L.length-1],file:{name:"Seçili dönem: "+de+" (aylık özetlerden)",size:0},cols:Z.cols,rows:__bos,kaynak:null,allHeaders:Z.allHeaders,aylar:L,ist,ham:Z.results,dosyaHam:null,ozet:!0,ozetSatir:Z.satir};'
     '__DN_ONB.set(k,P);while(__DN_ONB.size>4)__DN_ONB.delete(__DN_ONB.keys().next().value);return P}let __onSuz=!1;')
 bir('recs.push(await __dnAyAl(L[i],yerel,il,ilerleme))}',
     '{const r=await __dnAyAl(L[i],yerel,il,ilerleme);if(ist.length&&L.length>1){const c=__cT(r.cols,r.allHeaders),ic=c&&c.istasyon,IS=new Set(ist);ic&&(r.rows=r.rows.filter(x=>IS.has(String(x[ic]==null?"":x[ic]).trim())),__onSuz=!0)}recs.push(r)}}')
@@ -26,5 +26,6 @@ bir('const istler=R.useMemo(()=>{const rows=D?D.kaynak:pr,c=(D?D.cols:cols)||{},
 bir('const p=(async()=>{try{const L=(await(0,ze.yZ)()).map(e=>e.ym).filter(y=>y<K).sort(),pr=L[L.length-1];if(!pr)return null;',
     'const p=(async()=>{try{const L=(await(0,ze.yZ)()).map(e=>e.ym).filter(y=>y<K).sort(),pr=L[L.length-1];'
     'try{const uz=await __ozOncUzak(K);if(uz&&(!pr||uz.ym>pr)){const T=await __ozOncOzet(uz.il,uz.ym,Y);if(T)return{ym:uz.ym,T}}}catch(e){}if(!pr)return null;')
+bir('rawRowCount:P.rows.length,parsedRows:P.rows,', 'rawRowCount:P.ozetSatir||P.rows.length,parsedRows:P.rows,')
 html = html[:m.start(1)] + base64.b64encode(js.encode("utf-8")).decode() + html[m.end(1):]
 open(p, "w", encoding="utf-8").write(html); print("DONEM_OZET_OK")
