@@ -15,18 +15,21 @@ def bir(a, b):
 # 1) menü: en başa Ana Sayfa
 bir('__useHMS().hm&&o.splice(1,0,...o.splice(2,1));',
     '__useHMS().hm&&o.splice(1,0,...o.splice(2,1));o.unshift({id:"anasayfa",label:"Ana Sayfa",icon:__AnaIc,testId:"nav-anasayfa"});')
+# 1b) Kontrol Paneli'nin simgesi ev çiziyordu; Ana Sayfa ile karışmasın diye pano simgesi (ad ve yer aynı)
+bir('icon:re,testId:"nav-dashboard"', 'icon:__PanoIc,testId:"nav-dashboard"')
 # 2) görünüm
 bir('"upload"===o&&(0,a().jsx)(dd,{onArchiveChange:C}),',
     '"anasayfa"===o&&(0,a().jsx)(__AnaSayfaV,{}),"upload"===o&&(0,a().jsx)(dd,{onArchiveChange:C}),')
 # 3) bileşenler (menü işlevinin önüne)
-kod = r'''function __AnaIc(p){return (0,a().jsx)("svg",{width:p.size||18,height:p.size||18,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",children:(0,a().jsx)("path",{d:"M3 11l9-8 9 8M5 9v12h14V9M9 21v-7h6v7"})})}
+kod = r'''function __PanoIc(p){return (0,a().jsx)("svg",{width:p.size||18,height:p.size||18,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",children:(0,a().jsx)("path",{d:"M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"})})}
+function __AnaIc(p){return (0,a().jsx)("svg",{width:p.size||18,height:p.size||18,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",children:(0,a().jsx)("path",{d:"M3 11l9-8 9 8M5 9v12h14V9M9 21v-7h6v7"})})}
 function __AnaSayfaV(){
   const git=Ge(e=>e.setActiveView),res=Ge(e=>e.results),ar=Ge(e=>e.archivedMonths)||[];
   const AY=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
   const ad=ym=>{const m=/^(\d{4})-(\d{2})/.exec(String(ym||""));return m?AY[+m[2]-1]+" "+m[1]:"—"};
   const yms=ar.map(x=>x&&x.ym).filter(Boolean).sort(),son=yms[yms.length-1],yil=son?son.slice(0,4):"",yilSay=yms.filter(x=>x.slice(0,4)===yil).length;
   const kart=(b,d,alt,hedef,ok)=>__h("div",{className:"ana-kart"},__h("span",null,b),__h("b",null,d),__h("small",null,alt,hedef&&ok!==!1?__h("a",{href:"#",onClick:e=>{e.preventDefault();git(hedef)}}," ayrıntı"):null));
-  const hizli=[["upload","Excel Yükle",!0],["dashboard","Kontrol Paneli",!!res],["archive","Arşiv",!0],["guide","Kılavuz",!0],["settings","Ayarlar",!0]];
+  const hizli=[["upload","Excel Yükle",!0],["dashboard","Kontrol Paneli",!!res],["archive","Arşiv",!0],["settings","Ayarlar",!0]];
   return __h("div",{className:"ana-sayfa","data-testid":"ana-sayfa"},
     __h("h1",{className:"ana-bas"},"Ana Sayfa"),
     __h("p",{className:"ana-alt"},son?"Kurum arşivindeki son ay: "+ad(son):"Kurum arşivinde henüz ay yok"),
