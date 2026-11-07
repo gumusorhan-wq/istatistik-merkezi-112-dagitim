@@ -42,6 +42,8 @@ function __AnaSayfaV(){
       kart("Kurum arşivi",ar.length,"bu cihazdaki kayıtlı ay","archive"),
       kart(yil?yil+" yılı":"Yıl",yil?yilSay+" / 12":"—","ay yüklü","archive"),
       kart("Hesaplanan dönem",res?"Hazır":"Seçilmedi",res?"Kontrol Paneli'nde görüntüleniyor":"Arşiv'den ay seçin ya da Excel yükleyin",res?"dashboard":"archive")),
+    __h("div",{className:"ana-hizli ana-moduller"},__h("h3",null,"Modüller"),!res?__h("p",{className:"ana-not"},"Modüllere geçmek için Arşiv'den bir ay açın ya da Excel yükleyin."):null,
+      __h("div",{className:"ana-git-l"},Ph.map((m,i)=>__h("button",{key:m.id,type:"button",className:"ana-git ana-mod",disabled:!res,"data-testid":"ana-mod-"+m.id,onClick:()=>{if(!res)return;__HMS.set("te",m.id);try{Ge.getState().setActiveModule(m.id)}catch(e){}git("dashboard")}},__h("span",{className:"ana-no"},String(i+1)),String(m.label).replace(/^Modül\s*\d+\s*[—-]\s*/,""))))),
     __h("div",{className:"ana-hizli"},__h("h3",null,"Hızlı erişim"),__h("div",{className:"ana-git-l"},hizli.map(([k,t,ok])=>__h("button",{key:k,type:"button",className:"ana-git",disabled:!ok,onClick:()=>ok&&git(k)},t)))));
 }
 '''
