@@ -17,6 +17,10 @@ bir('__useHMS().hm&&o.splice(1,0,...o.splice(2,1));',
     '__useHMS().hm&&o.splice(1,0,...o.splice(2,1));o.unshift({id:"anasayfa",label:"Ana Sayfa",icon:__AnaIc,testId:"nav-anasayfa"});')
 # 1b) Kontrol Paneli'nin simgesi ev çiziyordu; Ana Sayfa ile karışmasın diye pano simgesi (ad ve yer aynı)
 bir('icon:re,testId:"nav-dashboard"', 'icon:__PanoIc,testId:"nav-dashboard"')
+# 1c) açılışta Ana Sayfa (Depo / Planlama gibi): başlangıç görünümü ve açılıştaki otomatik ay yüklemeleri Ana Sayfa'da kalır
+bir('activeView:"upload",activeModule:"m1",activeScope:"ashi"', 'activeView:"anasayfa",activeModule:"m1",activeScope:"ashi"')
+bir('st.setActiveView&&st.setActiveView("dashboard");return}', 'st.setActiveView&&st.setActiveView("anasayfa");return}')
+bir('d("dashboard"),m(`Son kay\\u0131tl\\u0131 ay otomatik', 'd("anasayfa"),m(`Son kay\\u0131tl\\u0131 ay otomatik')
 # 2) görünüm
 bir('"upload"===o&&(0,a().jsx)(dd,{onArchiveChange:C}),',
     '"anasayfa"===o&&(0,a().jsx)(__AnaSayfaV,{}),"upload"===o&&(0,a().jsx)(dd,{onArchiveChange:C}),')
