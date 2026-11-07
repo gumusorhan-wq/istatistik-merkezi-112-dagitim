@@ -28,20 +28,20 @@ bir('"upload"===o&&(0,a().jsx)(dd,{onArchiveChange:C}),',
 kod = r'''function __PanoIc(p){return (0,a().jsx)("svg",{width:p.size||18,height:p.size||18,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",children:(0,a().jsx)("path",{d:"M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"})})}
 function __AnaIc(p){return (0,a().jsx)("svg",{width:p.size||18,height:p.size||18,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true",children:(0,a().jsx)("path",{d:"M3 11l9-8 9 8M5 9v12h14V9M9 21v-7h6v7"})})}
 function __AnaSayfaV(){
-  const git=Ge(e=>e.setActiveView),res=Ge(e=>e.results),ar=Ge(e=>e.archivedMonths)||[];
+  const git=Ge(e=>e.setActiveView),res=Ge(e=>e.results),ar=Ge(e=>e.archivedMonths)||[],cm=Ge(e=>e.currentMonth),vaka=Ge(e=>e.rawRowCount)||0;
   const AY=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
   const ad=ym=>{const m=/^(\d{4})-(\d{2})/.exec(String(ym||""));return m?AY[+m[2]-1]+" "+m[1]:"—"};
-  const yms=ar.map(x=>x&&x.ym).filter(Boolean).sort(),son=yms[yms.length-1],yil=son?son.slice(0,4):"",yilSay=yms.filter(x=>x.slice(0,4)===yil).length;
-  const kart=(b,d,alt,hedef,ok)=>__h("div",{className:"ana-kart"},__h("span",null,b),__h("b",null,d),__h("small",null,alt,hedef&&ok!==!1?__h("a",{href:"#",onClick:e=>{e.preventDefault();git(hedef)}}," ayrıntı"):null));
+  const yms=ar.map(x=>x&&x.ym).filter(Boolean).sort(),ilk=yms[0],son=yms[yms.length-1];
+  // Sürüm 13.36: kartlar sade ve açıklamalı (kullanıcı geri bildirimi: '2026 yılı 4/12', 'Hesaplanan dönem Hazır' anlaşılmıyordu)
+  const kart=(b,d,alt,hedef,yazi)=>__h("div",{className:"ana-kart"},__h("span",null,b),__h("b",null,d),__h("small",null,alt,hedef?__h("a",{href:"#",onClick:e=>{e.preventDefault();git(hedef)}}," "+(yazi||"ayrıntı")):null));
   const hizli=[["upload","Excel Yükle",!0],["dashboard","Kontrol Paneli",!!res],["archive","Arşiv",!0],["settings","Ayarlar",!0]];
   return __h("div",{className:"ana-sayfa","data-testid":"ana-sayfa"},
     __h("h1",{className:"ana-bas"},"Ana Sayfa"),
-    __h("p",{className:"ana-alt"},son?"Kurum arşivindeki son ay: "+ad(son):"Kurum arşivinde henüz ay yok"),
+    __h("p",{className:"ana-alt"},res&&cm?"Kontrol Paneli'nde açık ay: "+ad(cm):"Kontrol Paneli'nde açık ay yok — Arşiv'den bir ay seçin ya da Excel yükleyin"),
     __h("div",{className:"ana-kartlar"},
-      kart("Son ay",ad(son),son?"kurum arşivindeki en güncel ay":"arşiv boş","archive"),
-      kart("Kurum arşivi",ar.length,"bu cihazdaki kayıtlı ay","archive"),
-      kart(yil?yil+" yılı":"Yıl",yil?yilSay+" / 12":"—","ay yüklü","archive"),
-      kart("Hesaplanan dönem",res?"Hazır":"Seçilmedi",res?"Kontrol Paneli'nde görüntüleniyor":"Arşiv'den ay seçin ya da Excel yükleyin",res?"dashboard":"archive")),
+      kart("Açık ay",res&&cm?ad(cm):"Yok",res?"Kontrol Paneli'nde gösterilen ay":"henüz bir ay açılmadı",res?"dashboard":"archive",res?"Kontrol Paneli'ni aç":"Arşiv'den seç"),
+      kart("Vaka sayısı",res?vaka.toLocaleString("tr-TR"):"—",res?"açık ayda analiz edilen vaka":"ay açılınca görünür",res?"dashboard":null,"modüllere git"),
+      kart("Kurum arşivi",ar.length+" ay",ar.length?(ilk===son?ad(son):ad(ilk)+" – "+ad(son))+" arası kayıtlı":"arşivde ay yok","archive","Arşiv'i aç")),
     __h("div",{className:"ana-hizli ana-moduller"},__h("h3",null,"Modüller"),!res?__h("p",{className:"ana-not"},"Modüllere geçmek için Arşiv'den bir ay açın ya da Excel yükleyin."):null,
       __h("div",{className:"ana-git-l"},Ph.map((m,i)=>__h("button",{key:m.id,type:"button",className:"ana-git ana-mod",disabled:!res,"data-testid":"ana-mod-"+m.id,onClick:()=>{if(!res)return;__HMS.set("te",m.id);try{Ge.getState().setActiveModule(m.id)}catch(e){}git("dashboard")}},__h("span",{className:"ana-no"},String(i+1)),String(m.label).replace(/^Modül\s*\d+\s*[—-]\s*/,""))))),
     __h("div",{className:"ana-hizli"},__h("h3",null,"Hızlı erişim"),__h("div",{className:"ana-git-l"},hizli.map(([k,t,ok])=>__h("button",{key:k,type:"button",className:"ana-git",disabled:!ok,onClick:()=>ok&&git(k)},t)))));
